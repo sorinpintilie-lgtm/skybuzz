@@ -34,7 +34,7 @@ export const metadata: Metadata = {
       "Design and web development for clear communication, stable behavior, and easy use.",
     images: [
       {
-        url: "/sky/logo.png",
+        url: "/skybuzz_logo_final (1).png",
         width: 1200,
         height: 630,
         alt: "Sky.buzz",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     title: "Sky.buzz | Digital studio",
     description:
       "Strategy, design, and web development for brands that need a clear digital presence.",
-    images: ["/sky/logo.png"],
+    images: ["/skybuzz_logo_final (1).png"],
   },
 };
 

@@ -172,7 +172,7 @@ export default function SkyPageShell({
           <Container>
             <div className="flex h-16 items-center justify-between">
               <Link href="/" className="relative h-9 w-[152px] opacity-95">
-                <Image src="/sky/logo.png" alt="Sky" fill className="object-contain" sizes="152px" />
+                <Image src="/skybuzz_logo_final (1).png" alt="Sky.buzz" fill className="object-contain brightness-0 invert" sizes="152px" />
               </Link>
 
               <nav className="hidden items-center gap-7 text-sm font-medium md:flex">
@@ -657,7 +657,13 @@ export default function SkyPageShell({
             <div className="relative flex flex-col items-center justify-center gap-4 border-t border-white/10 py-14 text-center">
               <p className="text-sm uppercase tracking-[0.28em] text-white/65">{shared.footer.kicker}</p>
               <Link href="/" className="relative h-14 w-[220px] opacity-95 transition hover:opacity-100">
-                <Image src="/sky/logo.png" alt="sky.buzz" fill className="object-contain" sizes="220px" />
+                <Image
+                  src="/skybuzz_logo_final (1).png"
+                  alt="sky.buzz"
+                  fill
+                  className="object-contain brightness-0 invert"
+                  sizes="220px"
+                />
               </Link>
               <p className="text-[11px] tracking-[0.16em] text-white/35">{shared.footer.copyright}</p>
             </div>

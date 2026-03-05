@@ -668,7 +668,7 @@ export default function Page() {
       <Particles quantity={120} staticity={52} ease={74} size={0.62} color="#ffffff" className="z-0 opacity-[0.62] blur-[0.6px]" />
 
       <div className="relative z-10">
-        <header className="sticky top-0 z-40 border-b border-white/10 bg-black/36 backdrop-blur-xl supports-[backdrop-filter]:bg-black/28">
+        <header className="sticky top-0 z-[120] border-b border-white/10 bg-black/36 backdrop-blur-xl supports-[backdrop-filter]:bg-black/28">
           <Container>
             <div className="flex h-16 items-center justify-between">
               <Link href="/" className="relative h-9 w-[152px] opacity-95">
@@ -745,7 +745,7 @@ export default function Page() {
 
           <div
             className={[
-              "fixed inset-0 z-[70] md:hidden",
+              "fixed inset-0 z-[140] md:hidden",
               mobileMenuOpen ? "pointer-events-auto" : "pointer-events-none",
             ].join(" ")}
           >
@@ -754,7 +754,7 @@ export default function Page() {
               aria-label="Close menu"
               onClick={() => setMobileMenuOpen(false)}
               className={[
-                "absolute inset-0 z-[70] bg-black/50 backdrop-blur-[2px] transition-opacity duration-300",
+                "absolute inset-0 z-[140] bg-black/50 backdrop-blur-[2px] transition-opacity duration-300",
                 mobileMenuOpen ? "opacity-100" : "opacity-0",
               ].join(" ")}
             />
@@ -762,7 +762,7 @@ export default function Page() {
             <aside
               id="sky-buzz-mobile-drawer-home"
               className={[
-                "absolute right-0 top-0 z-[80] flex h-full w-[min(88vw,360px)] flex-col overflow-hidden border-l border-white/30 bg-white/[0.10] p-4 ring-1 ring-white/20 shadow-[-16px_0_48px_rgba(0,0,0,0.35)] backdrop-blur-[22px] supports-[backdrop-filter]:bg-white/[0.08] transition-transform duration-300",
+                "absolute right-0 top-0 z-[150] flex h-full w-[min(88vw,360px)] flex-col overflow-hidden border-l border-white/30 bg-white/[0.10] p-4 ring-1 ring-white/20 shadow-[-16px_0_48px_rgba(0,0,0,0.35)] backdrop-blur-[22px] supports-[backdrop-filter]:bg-white/[0.08] transition-transform duration-300",
                 mobileMenuOpen ? "translate-x-0" : "translate-x-full",
               ].join(" ")}
             >

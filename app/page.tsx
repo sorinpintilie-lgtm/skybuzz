@@ -99,12 +99,12 @@ function Hero() {
       />
       <div className="pointer-events-none absolute inset-x-0 top-0 h-[78vh] bg-[radial-gradient(72%_62%_at_50%_0%,rgba(255,255,255,0.16),rgba(255,255,255,0.04)_26%,rgba(0,0,0,0)_62%)]" />
       <Container>
-        <div className="relative z-10 grid items-end gap-6 pb-10 pt-8 sm:gap-10 sm:pb-14 sm:pt-12 lg:grid-cols-12">
+        <div className="mobile-snap-row relative z-10 -mx-1 flex items-end gap-3 overflow-x-auto px-1 pb-10 pt-8 sm:mx-0 sm:grid sm:grid-cols-6 sm:gap-8 sm:overflow-visible sm:px-0 sm:pb-14 sm:pt-12 lg:grid-cols-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={m.t(0.04, 1)}
-            className="lg:col-span-7"
+            className="mobile-snap-card min-w-[92%] shrink-0 rounded-[24px] border border-white/10 bg-black/34 p-4 backdrop-blur sm:col-span-4 sm:min-w-0 sm:rounded-none sm:border-0 sm:bg-transparent sm:p-0 sm:backdrop-blur-none lg:col-span-7"
           >
             {hasHeroEyebrow ? <div className="text-xs uppercase tracking-[0.28em] text-white/60">{hero.eyebrow}</div> : null}
             <h1
@@ -145,16 +145,16 @@ function Hero() {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={m.t(0.12, 1)}
-            className="reveal-blur lg:col-span-5"
+            className="reveal-blur mobile-snap-card min-w-[76%] shrink-0 sm:col-span-2 sm:min-w-0 lg:col-span-5"
           >
-            <div className="relative aspect-[10/9] overflow-hidden rounded-[24px] sm:aspect-[4/5]">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-[24px] sm:aspect-[4/5]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/ochi.png" alt="Sky showcase" className="mono-ui-media h-full w-full object-cover" />
               <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(0,0,0,0.82),rgba(0,0,0,0.06))]" />
               <div className="absolute left-3 top-3 rounded-full border border-white/20 bg-black/38 px-3 py-1 text-[10px] uppercase tracking-[0.18em] text-white/72 backdrop-blur sm:hidden">
                 {hero.imageTag}
               </div>
-              <div className="absolute bottom-3 right-3 max-w-[60%] rounded-2xl border border-white/16 bg-black/48 px-3 py-2.5 text-[11px] leading-relaxed text-white/75 backdrop-blur sm:hidden">
+              <div className="absolute bottom-3 right-3 max-w-[74%] rounded-2xl border border-white/16 bg-black/48 px-3 py-2.5 text-[11px] leading-relaxed text-white/75 backdrop-blur sm:hidden">
                 {hero.imageNote}
               </div>
             </div>
@@ -196,29 +196,37 @@ function BentoStory() {
           className="reveal-blur mb-8 rounded-[24px] border border-white/12 bg-white/[0.03] p-4 sm:mb-10 sm:p-6"
         >
           <div className="text-[11px] uppercase tracking-[0.2em] text-white/58">{bento.workedWithTitle}</div>
-          <div className="mt-3 grid grid-cols-2 gap-2.5 sm:grid-cols-3">
+          <div className="mobile-snap-row -mx-1 mt-3 flex gap-3 overflow-x-auto px-1 pb-1 sm:mx-0 sm:grid sm:grid-cols-3 sm:gap-3 sm:overflow-visible sm:px-0 sm:pb-0">
             {workedWith.map((client, index) => (
-              <div
+              <article
                 key={client.name}
                 className={[
-                  "flex items-center gap-3 rounded-xl border border-white/10 bg-black/28 px-3.5 py-3",
-                  index === workedWith.length - 1 ? "col-span-2 sm:col-span-1" : "",
+                  "mobile-snap-card group relative min-w-[78%] shrink-0 overflow-hidden rounded-[18px] border border-white/12 bg-[linear-gradient(135deg,rgba(255,255,255,0.1),rgba(255,255,255,0.02)_45%,rgba(0,0,0,0.45))] p-4 sm:min-w-0",
+                  index === workedWith.length - 1 ? "sm:col-span-1" : "",
                 ].join(" ")}
               >
-                <div className="flex h-8 w-8 items-center justify-center rounded-full border border-white/16 bg-white/[0.05] text-[11px] font-semibold tracking-[0.08em] text-white/85">
-                  {client.mark}
+                <div className="pointer-events-none absolute -right-10 -top-10 h-24 w-24 rounded-full bg-white/10 blur-2xl transition group-hover:bg-white/15" />
+                <div className="relative">
+                  <p className="text-[10px] uppercase tracking-[0.18em] text-white/52">Client</p>
+                  <h4 className="mt-2 text-base font-semibold tracking-tight text-white/92">{client.name}</h4>
+                  <div className="mt-3 inline-flex items-center rounded-full border border-white/18 bg-black/30 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-white/74">
+                    {client.mark}
+                  </div>
                 </div>
-                <div className="text-sm font-medium text-white/82">{client.name}</div>
-              </div>
+              </article>
             ))}
           </div>
 
-          <div className="mt-4 grid grid-cols-2 gap-2.5 sm:grid-cols-3">
+          <div className="mobile-snap-row -mx-1 mt-4 flex gap-3 overflow-x-auto px-1 pb-1 sm:mx-0 sm:grid sm:grid-cols-3 sm:gap-3 sm:overflow-visible sm:px-0 sm:pb-0">
             {credibilityMetrics.map((metric) => (
-              <div key={metric.value} className="rounded-xl border border-white/10 bg-black/22 p-3.5">
-                <div className="text-lg font-semibold tracking-tight text-white sm:text-xl">{metric.value}</div>
-                <p className="mt-1 text-xs leading-relaxed text-white/63 sm:text-[13px]">{metric.label}</p>
-              </div>
+              <article
+                key={metric.value}
+                className="mobile-snap-card min-w-[74%] shrink-0 rounded-[18px] border border-white/12 bg-[linear-gradient(160deg,rgba(255,255,255,0.06),rgba(0,0,0,0.4))] p-4 sm:min-w-0"
+              >
+                <p className="text-2xl font-semibold leading-none tracking-tight text-white sm:text-[1.75rem]">{metric.value}</p>
+                <div className="mt-3 h-px w-full bg-white/10" />
+                <p className="mt-2 text-xs leading-relaxed text-white/66 sm:text-[13px]">{metric.label}</p>
+              </article>
             ))}
           </div>
 
@@ -263,18 +271,18 @@ function StoryPanels() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-10%" }}
               transition={m.t(i * 0.05, 0.75)}
-              className="sky-surface-soft reveal-blur mobile-snap-card grid min-w-[92%] shrink-0 grid-cols-12 overflow-hidden rounded-[24px] sm:min-w-0 sm:rounded-[28px]"
+              className="sky-surface-soft reveal-blur mobile-snap-card grid min-w-[92%] shrink-0 grid-cols-6 overflow-hidden rounded-[24px] sm:min-w-0 sm:grid-cols-12 sm:rounded-[28px]"
             >
-              <div className="relative col-span-7 min-h-[220px] sm:min-h-[260px] lg:col-span-7 lg:min-h-[360px]">
+              <div className="relative col-span-3 min-h-[220px] sm:col-span-7 sm:min-h-[260px] lg:min-h-[360px]">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={p.img} alt="" className="mono-ui-media absolute inset-0 h-full w-full object-cover" />
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.15),rgba(0,0,0,0.58))] lg:bg-[linear-gradient(to_top,rgba(0,0,0,0.2),rgba(0,0,0,0.55))]" />
               </div>
-              <div className="col-span-5 flex items-center p-4 sm:p-10 lg:col-span-5">
+              <div className="col-span-3 flex items-center p-4 sm:col-span-5 sm:p-10">
                 <div>
                   <div className="text-xs uppercase tracking-[0.24em] text-white/55">0{i + 1}</div>
-                  <h3 className="mt-2 text-[1.55rem] font-semibold tracking-tight text-white sm:mt-3 sm:text-4xl">{p.title}</h3>
-                  <p className="mt-3 max-w-sm text-sm text-white/72 sm:mt-4 sm:text-base">{p.summary}</p>
+                  <h3 className="mt-2 text-[1.3rem] font-semibold tracking-tight text-white sm:mt-3 sm:text-4xl">{p.title}</h3>
+                  <p className="mt-2 max-w-sm text-sm text-white/72 sm:mt-4 sm:text-base">{p.summary}</p>
                   <div className="mt-3 flex flex-wrap gap-1.5 sm:mt-4 sm:gap-2">
                     {p.chips.map((step) => (
                       <span
@@ -543,9 +551,9 @@ function Contact() {
     event.preventDefault();
     if (!quickEmail.trim()) return;
 
-    const subject = encodeURIComponent(`Project request | ${quickName.trim() || "Website brief"}`);
+    const subject = encodeURIComponent(`Project inquiry | ${quickName.trim() || "New brief"}`);
     const body = encodeURIComponent(
-      `Name: ${quickName.trim() || "Not provided"}\nEmail: ${quickEmail.trim()}\n\nTell us what you are building and what success means for you.`,
+      `Name: ${quickName.trim() || "Not provided"}\nEmail: ${quickEmail.trim()}\n\nShare what you want to build and the result you want to achieve.`,
     );
 
     window.location.href = `mailto:hello@sky.ro?subject=${subject}&body=${body}`;
@@ -620,6 +628,32 @@ function Contact() {
 export default function Page() {
   const pathname = usePathname();
   const shared = siteText.shared;
+  const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
+
+  React.useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [pathname]);
+
+  React.useEffect(() => {
+    if (!mobileMenuOpen || typeof window === "undefined") return;
+
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setMobileMenuOpen(false);
+    };
+
+    window.addEventListener("keydown", handleEscape);
+    return () => window.removeEventListener("keydown", handleEscape);
+  }, [mobileMenuOpen]);
+
+  React.useEffect(() => {
+    if (typeof document === "undefined") return;
+    const { body } = document;
+    const previousOverflow = body.style.overflow;
+    if (mobileMenuOpen) body.style.overflow = "hidden";
+    return () => {
+      body.style.overflow = previousOverflow;
+    };
+  }, [mobileMenuOpen]);
 
   React.useEffect(() => {
     if (typeof window === "undefined") return;
@@ -671,31 +705,119 @@ export default function Page() {
                 })}
               </nav>
 
-              <Button href="#contact" ghost>
-                {shared.headerStartLabel}
-              </Button>
-            </div>
+              <div className="hidden md:block">
+                <Button href="#contact" ghost>
+                  {shared.headerStartLabel}
+                </Button>
+              </div>
 
-            <div className="mobile-snap-row -mx-1 flex gap-2 overflow-x-auto pb-2 pl-1 pr-1 md:hidden">
-              {navLinks.map((link) => {
-                const isActive = pathname === link.href;
-                return (
-                  <Link
-                    key={`mobile-${link.href}`}
-                    href={link.href}
+              <button
+                type="button"
+                aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+                aria-expanded={mobileMenuOpen}
+                aria-controls="sky-buzz-mobile-drawer-home"
+                onClick={() => setMobileMenuOpen((prev) => !prev)}
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/16 bg-white/[0.04] text-white transition hover:border-white/26 hover:bg-white/[0.1] md:hidden"
+              >
+                <span className="relative block h-4 w-4">
+                  <span
                     className={[
-                      "mobile-snap-card shrink-0 rounded-full border px-3.5 py-1.5 text-xs font-medium tracking-[0.01em]",
-                      isActive
-                        ? "border-white/34 bg-white/[0.12] text-white"
-                        : "border-white/16 bg-white/[0.04] text-white/78",
+                      "absolute left-0 top-0.5 h-[1.5px] w-4 bg-white transition-transform duration-300",
+                      mobileMenuOpen ? "translate-y-[5px] rotate-45" : "",
                     ].join(" ")}
-                  >
-                    {link.label}
-                  </Link>
-                );
-              })}
+                  />
+                  <span
+                    className={[
+                      "absolute left-0 top-[7px] h-[1.5px] w-4 bg-white transition-opacity duration-200",
+                      mobileMenuOpen ? "opacity-0" : "opacity-100",
+                    ].join(" ")}
+                  />
+                  <span
+                    className={[
+                      "absolute left-0 top-[13px] h-[1.5px] w-4 bg-white transition-transform duration-300",
+                      mobileMenuOpen ? "-translate-y-[7px] -rotate-45" : "",
+                    ].join(" ")}
+                  />
+                </span>
+              </button>
             </div>
           </Container>
+
+          <div
+            className={[
+              "fixed inset-0 z-[70] md:hidden",
+              mobileMenuOpen ? "pointer-events-auto" : "pointer-events-none",
+            ].join(" ")}
+          >
+            <button
+              type="button"
+              aria-label="Close menu"
+              onClick={() => setMobileMenuOpen(false)}
+              className={[
+                "absolute inset-0 bg-black/70 backdrop-blur-sm transition-opacity duration-300",
+                mobileMenuOpen ? "opacity-100" : "opacity-0",
+              ].join(" ")}
+            />
+
+            <aside
+              id="sky-buzz-mobile-drawer-home"
+              className={[
+                "absolute right-0 top-0 flex h-full w-[min(88vw,360px)] flex-col border-l border-white/12 bg-[#050505]/95 p-4 shadow-[-16px_0_48px_rgba(0,0,0,0.45)] transition-transform duration-300",
+                mobileMenuOpen ? "translate-x-0" : "translate-x-full",
+              ].join(" ")}
+            >
+              <div className="flex items-center justify-between">
+                <p className="text-[11px] uppercase tracking-[0.2em] text-white/58">Navigation</p>
+                <button
+                  type="button"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/16 bg-white/[0.04] text-lg leading-none text-white/86 transition hover:border-white/28 hover:bg-white/[0.1]"
+                  aria-label="Close"
+                >
+                  ×
+                </button>
+              </div>
+
+              <nav className="mt-4 grid gap-2.5">
+                {navLinks.map((link, index) => {
+                  const isActive = pathname === link.href;
+                  return (
+                    <Link
+                      key={`drawer-${link.href}`}
+                      href={link.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={[
+                        "rounded-2xl border px-4 py-3 transition",
+                        isActive
+                          ? "border-white/34 bg-white/[0.12]"
+                          : "border-white/12 bg-white/[0.03] hover:border-white/26 hover:bg-white/[0.08]",
+                      ].join(" ")}
+                    >
+                      <p className="text-[10px] uppercase tracking-[0.18em] text-white/46">0{index + 1}</p>
+                      <p className="mt-1 text-sm font-medium text-white/90">{link.label}</p>
+                    </Link>
+                  );
+                })}
+              </nav>
+
+              <div className="mt-auto grid gap-2.5 pt-5">
+                <a
+                  href="#contact"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="inline-flex h-11 items-center justify-center rounded-full bg-white px-5 text-sm font-medium text-black transition hover:bg-white/90"
+                >
+                  {shared.headerStartLabel}
+                </a>
+                <a
+                  href="#work"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="inline-flex h-11 items-center justify-center rounded-full border border-white/20 bg-white/[0.04] px-5 text-sm font-medium text-white transition hover:border-white/32 hover:bg-white/[0.1]"
+                >
+                  {siteText.home.hero.primaryCta}
+                </a>
+              </div>
+            </aside>
+          </div>
         </header>
 
         <main>

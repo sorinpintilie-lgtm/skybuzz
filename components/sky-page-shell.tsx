@@ -239,7 +239,7 @@ export default function SkyPageShell({
 
               <button
                 type="button"
-                aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+                aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
                 aria-expanded={mobileMenuOpen}
                 aria-controls="sky-buzz-mobile-drawer-shell"
                 onClick={() => setMobileMenuOpen((prev) => !prev)}
@@ -280,7 +280,7 @@ export default function SkyPageShell({
               >
                 <button
                   type="button"
-                  aria-label="Close menu"
+                  aria-label="Close navigation menu"
                   onClick={() => setMobileMenuOpen(false)}
                   className={[
                     "absolute inset-0 z-[120] bg-black/50 backdrop-blur-[2px] transition-opacity duration-300",

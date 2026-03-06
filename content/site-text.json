@@ -78,10 +78,10 @@
     "hero": {
       "eyebrow": "",
       "title": "We build digital growth systems that drive results.",
-      "subhead": "We align strategy, websites, social media, and paid campaigns so people understand your offer fast and take action.",
+      "subhead": "We align strategy, your site, social channels, and paid campaigns so people understand your offer fast and take action.",
       "primaryCta": "View work",
       "secondaryCta": "Start a project",
-      "meta": "Websites, social systems, paid flows, and conversion funnels that stay clear, fast, and scalable.",
+      "meta": "Sites, social channels, paid flows, and conversion paths that stay clear, fast, and scalable.",
       "note": "We reply in under 24 hours",
       "mobilePills": [
         "Clear structure",
@@ -872,7 +872,7 @@
     },
     "serviceColumns": [
       {
-        "title": "Websites & landing pages",
+        "title": "Websites and campaign pages",
         "points": [
           "Clear message",
           "Easy to follow structure",
@@ -959,7 +959,7 @@
     "hero": {
       "pageLabel": "Work",
       "title": "Published projects built for results.",
-      "description": "Selection of digital projects, websites, campaigns, and growth systems across sectors, with observable results.",
+      "description": "Selection of digital projects, sites, campaigns, and growth systems across sectors, with observable results.",
       "primaryCta": "I want something similar",
       "secondaryCta": "See services",
       "heroBadge": "Selection",
@@ -1358,7 +1358,7 @@
     ],
     "outcomes": {
       "eyebrow": "Results",
-      "title": "Projects with concrete impact on client activity.",
+          "title": "Projects with concrete impact on partner activity.",
       "description": "We present briefly what we delivered and what improved after launch.",
       "shippedLabel": "Shipped",
       "resultLabel": "Result",
@@ -1381,7 +1381,7 @@
         {
           "name": "Enumismatica",
           "vertical": "Niche product",
-          "shipped": "Website + funnel rebuild",
+          "shipped": "Site and conversion path rebuild",
           "result": "Clearer message for the right audience",
           "href": "https://enumismatica.ro"
         },

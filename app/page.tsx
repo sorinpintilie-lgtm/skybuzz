@@ -436,28 +436,28 @@ function WhySky() {
 
 function PartnerLogoRail() {
   const logos = [
-    { src: "/logos/artisdenta logo.png", alt: "Client logo 01", href: "#work" },
-    { src: "/logos/eNumismatica.ro_logo.png", alt: "Client logo 02", href: "#work" },
-    { src: "/logos/favicon.png", alt: "Client logo 03", href: "#work" },
-    { src: "/logos/file_0000000004c461fdaddf55c47348a021.png", alt: "Client logo 04", href: "#work" },
-    { src: "/logos/fulllogo_transparent.avif", alt: "Client logo 05", href: "#work" },
-    { src: "/logos/IMG_2868 (2).PNG", alt: "Client logo 06", href: "#work" },
-    { src: "/logos/IMG_9812.png", alt: "Client logo 07", href: "#work" },
-    { src: "/logos/loglogo.png", alt: "Client logo 08", href: "#work" },
-    { src: "/logos/logo (1).png", alt: "Client logo 09", href: "#work" },
-    { src: "/logos/logo (2).png", alt: "Client logo 10", href: "#work" },
-    { src: "/logos/logo (3).png", alt: "Client logo 11", href: "#work" },
-    { src: "/logos/logo (5).png", alt: "Client logo 12", href: "#work" },
-    { src: "/logos/logo_2.png", alt: "Client logo 13", href: "#work" },
-    { src: "/logos/logo_bakery-removebg-preview.png", alt: "Client logo 14", href: "#work" },
-    { src: "/logos/logo_pink.png", alt: "Client logo 15", href: "#work" },
-    { src: "/logos/logo_v1_Școala de Beauty.png", alt: "Client logo 16", href: "#work" },
-    { src: "/logos/logo-color (1).svg", alt: "Client logo 17", href: "#work" },
-    { src: "/logos/logohr (1).png", alt: "Client logo 18", href: "#work" },
-    { src: "/logos/logooac.png", alt: "Client logo 19", href: "#work" },
-    { src: "/logos/profilo_metal_logo.png", alt: "Client logo 20", href: "#work" },
-    { src: "/logos/sba_logo.PNG", alt: "Client logo 21", href: "#work" },
-    { src: "/logos/Sdental.png", alt: "Client logo 22", href: "#work" },
+    { src: "/logos/artisdenta logo.png", alt: "Partner logo 01", href: "#work" },
+    { src: "/logos/eNumismatica.ro_logo.png", alt: "Partner logo 02", href: "#work" },
+    { src: "/logos/favicon.png", alt: "Partner logo 03", href: "#work" },
+    { src: "/logos/file_0000000004c461fdaddf55c47348a021.png", alt: "Partner logo 04", href: "#work" },
+    { src: "/logos/fulllogo_transparent.avif", alt: "Partner logo 05", href: "#work" },
+    { src: "/logos/IMG_2868 (2).PNG", alt: "Partner logo 06", href: "#work" },
+    { src: "/logos/IMG_9812.png", alt: "Partner logo 07", href: "#work" },
+    { src: "/logos/loglogo.png", alt: "Partner logo 08", href: "#work" },
+    { src: "/logos/logo (1).png", alt: "Partner logo 09", href: "#work" },
+    { src: "/logos/logo (2).png", alt: "Partner logo 10", href: "#work" },
+    { src: "/logos/logo (3).png", alt: "Partner logo 11", href: "#work" },
+    { src: "/logos/logo (5).png", alt: "Partner logo 12", href: "#work" },
+    { src: "/logos/logo_2.png", alt: "Partner logo 13", href: "#work" },
+    { src: "/logos/logo_bakery-removebg-preview.png", alt: "Partner logo 14", href: "#work" },
+    { src: "/logos/logo_pink.png", alt: "Partner logo 15", href: "#work" },
+    { src: "/logos/logo_v1_Școala de Beauty.png", alt: "Partner logo 16", href: "#work" },
+    { src: "/logos/logo-color (1).svg", alt: "Partner logo 17", href: "#work" },
+    { src: "/logos/logohr (1).png", alt: "Partner logo 18", href: "#work" },
+    { src: "/logos/logooac.png", alt: "Partner logo 19", href: "#work" },
+    { src: "/logos/profilo_metal_logo.png", alt: "Partner logo 20", href: "#work" },
+    { src: "/logos/sba_logo.PNG", alt: "Partner logo 21", href: "#work" },
+    { src: "/logos/Sdental.png", alt: "Partner logo 22", href: "#work" },
   ];
 
   return (
@@ -472,7 +472,7 @@ function PartnerLogoRail() {
             gap={56}
             hoverSpeed={0}
             className="logo-rail-uniform"
-            ariaLabel="Technology and delivery stack"
+            ariaLabel="Partners and delivery stack"
           />
         </div>
       </Container>
@@ -720,7 +720,7 @@ export default function Page() {
 
               <button
                 type="button"
-                aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+                aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
                 aria-expanded={mobileMenuOpen}
                 aria-controls="sky-buzz-mobile-drawer-home"
                 onClick={() => setMobileMenuOpen((prev) => !prev)}
